@@ -12,9 +12,25 @@ class App extends Component {
     super();
     this.state = {
        selColorIdx: 0,
-       guesses: [],
+       guesses: [this.getNewGuess(),this.getNewGuess()],
        code: this.genCode()
     }
+  }
+
+  getNewGuess() {
+    // return a guess object
+    return {
+      // each guess has a code array and a nested score object
+      //init array to null for no chosen color for those positions yet
+      //score object hold perfect and almost properties init to 0 that renders pegs
+      //comment until done testing  
+      //code: [null,null,null,null],
+        code: [3,2,1,0],
+        score: {
+          perfect: 0,
+          almost: 0
+        }
+    };
   }
 
   genCode() {
