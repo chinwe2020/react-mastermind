@@ -1,8 +1,8 @@
 import React from 'react';
 
 const GuessPeg = (props) => (
-    <div className='component'>
-        GuessPeg
+    <div>
+        {props.color}
     </div>
 );
 

@@ -25,7 +25,7 @@ class App extends Component {
       //score object hold perfect and almost properties init to 0 that renders pegs
       //comment until done testing  
       //code: [null,null,null,null],
-        code: [3,2,1,0],
+        code: [3,2,2,3],
         score: {
           perfect: 0,
           almost: 0
