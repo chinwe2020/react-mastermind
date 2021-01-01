@@ -3,7 +3,7 @@ import styles from './ColorPicker.module.css';
 
 function ColorPicker(props) {
     return(
-        <div className='flex-v'>
+        <div className={styles.ColorPicker}>
             {props.colors.map((color, idx) =>
                 <button 
                     key={color} 

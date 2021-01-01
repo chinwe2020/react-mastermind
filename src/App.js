@@ -12,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
        selColorIdx: 0,
-       guesses: [this.getNewGuess(),this.getNewGuess()],
+       guesses: [this.getNewGuess()],
        code: this.genCode()
     }
   }
@@ -38,22 +38,22 @@ class App extends Component {
    }
 
    getWinTries(){
-     //if winner return num guesses, otherwise 0 (no winner)
-     let lastGuess = this.state.guesses.length - 1;
-     return this.state.guesses[lastGuess].score.perfect === 4 ? lastGuess + 1 : 0
+     //if winner, return num guesses, otherwise 0 (no winner)
+     let lastGuessIdx = this.state.guesses.length - 1;
+     return this.state.guesses[lastGuessIdx].score.perfect === 4 ? lastGuessIdx + 1 : 0
    }
 
   render() {
     let winTries = this.getWinTries();
     return (
       <div className="App">
-        <header className="App-header">React Mastermind</header>
-         <div className="flex-h">
+        <header className="App-header">REACT MASTERMIND</header>
+         <div className="flex-h align-flex-end">
           <GameBoard 
             colors={colors}
             guesses={this.state.guesses}
           />
-            <div>
+            <div className='App-controls'>
               <ColorPicker 
                 colors={colors}
                 selColorIdx={this.state.selColorIdx}
@@ -62,7 +62,7 @@ class App extends Component {
               <NewGameButton />
             </div>
          </div>
-        <footer>{(winTries ? `You won in ${winTries} Guesses!` : `Good Luck!`)}</footer>
+        <footer className='App-footer'>{(winTries ? `You won in ${winTries} Guesses!` : `Good Luck!`)}</footer>
       </div>
     );
   }
