@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './ScoreButton.module.css';
 
 function Scorebutton(props){
     return(
-        <button>Score Guess</button>
+        <button className={`${styles.button} btn btn-default`}>✔</button>
     );
 }
 

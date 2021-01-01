@@ -16,3 +16,13 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.flex-v{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button:focus, .btn:focus {
+  outline: none;
+}

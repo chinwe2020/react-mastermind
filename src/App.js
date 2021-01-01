@@ -37,10 +37,16 @@ class App extends Component {
     return new Array(4).fill().map(() => Math.floor(Math.random() * colors.length));
    }
 
+   getWinTries(){
+     //if winner return num guesses, otherwise 0 (no winner)
+     let lastGuess = this.state.guesses.length - 1;
+     return this.state.guesses[lastGuess].score.perfect === 4 ? lastGuess + 1 : 0
+   }
+
   render() {
+    let winTries = this.getWinTries();
     return (
       <div className="App">
-        Selected color:{colors[this.state.selColorIdx]}
         <header className="App-header">React Mastermind</header>
          <div className="flex-h">
           <GameBoard 
@@ -56,7 +62,7 @@ class App extends Component {
               <NewGameButton />
             </div>
          </div>
-        <footer className="component">footer</footer>
+        <footer>{(winTries ? `You won in ${winTries} Guesses!` : `Good Luck!`)}</footer>
       </div>
     );
   }

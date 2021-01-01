@@ -5,7 +5,9 @@ import Scorebutton from '../ScoreButton/ScoreButton';
 
 const GuessRow = (props) => (
     <div className='flex-h'>
-        <div>{props.rowIdx + 1}</div>
+        <div style={{color: props.currentGuess ? 'black' : 'lightgray'}}>
+            {props.rowIdx + 1}
+        </div>
         <GuessPegs 
             //to access the actual color value instead of the index
             colors={props.colors}
@@ -16,7 +18,9 @@ const GuessRow = (props) => (
         {
             props.currentGuess ?
             <Scorebutton /> :
-            <GuessScore />
+            <GuessScore 
+                score={props.guess.score}
+            />
         }
     </div>
 );
