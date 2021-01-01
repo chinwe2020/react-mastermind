@@ -18,6 +18,7 @@ const GuessRow = (props) => (
             //pegs dependent upon what color the player guesses, and is being stored in code prop
             //points to players input guess stored in getNewGuess
             code={props.guess.code}
+            currentGuess={props.currentGuess}
         />
         {
             props.currentGuess ?

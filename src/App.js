@@ -24,8 +24,7 @@ class App extends Component {
       //init array to null for no chosen color for those positions yet
       //score object hold perfect and almost properties init to 0 that renders pegs
       //comment until done testing  
-      //code: [null,null,null,null],
-        code: [3,2,2,3],
+      code: [null,null,null,null],
         score: {
           perfect: 0,
           almost: 0
