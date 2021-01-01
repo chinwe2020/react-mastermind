@@ -1,6 +1,6 @@
 import React from 'react';
 import GuessRow from '../GuessRow/GuessRow.jsx';
-import styles from './GameBoard.module.css'
+import styles from './GameBoard.module.css';
 
 const GameBoard = (props) => (
     <div className={styles.GameBoard}>
@@ -10,7 +10,7 @@ const GameBoard = (props) => (
                 colors={props.colors}
                 rowIdx={idx}
                 currentGuess= {idx === props.guesses.length - 1}
-                /* internal prop */
+                /* internal prop, cannot access in DOM */
                 key={idx}
             />
         )}
