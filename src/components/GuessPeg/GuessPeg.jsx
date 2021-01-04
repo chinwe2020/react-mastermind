@@ -10,7 +10,6 @@ const GuessPeg = (props) => (
             cursor: props.currentGuess && 'pointer'
         }}
     />
-    
 );
 
 export default GuessPeg;

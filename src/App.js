@@ -17,6 +17,7 @@ class App extends Component {
     }
   }
 
+  /*------ Helper Methods/App Logic------*/
   getNewGuess() {
     // return a guess object
     return {
@@ -42,6 +43,15 @@ class App extends Component {
      return this.state.guesses[lastGuessIdx].score.perfect === 4 ? lastGuessIdx + 1 : 0
    }
 
+/*-------Event Handler Methods---------*/
+
+handleColorSelection = (colorIdx) => {
+  this.setState({
+    selColorIdx:colorIdx
+  });
+};
+
+/*-------Life Cycle Methods---------*/
   render() {
     let winTries = this.getWinTries();
     return (
@@ -56,6 +66,7 @@ class App extends Component {
               <ColorPicker 
                 colors={colors}
                 selColorIdx={this.state.selColorIdx}
+                handleColorSelection={this.handleColorSelection}
               />
               <GameTimer />
               <NewGameButton />
