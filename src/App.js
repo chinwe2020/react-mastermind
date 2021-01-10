@@ -8,13 +8,18 @@ import NewGameButton from './components/NewGameButton/NewGameButton';
 const colors = ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'];
 
 class App extends Component {
-  state = {
-    selColorIdx: 0,
-    guesses: [this.getNewGuess()],
-    code: this.genCode()
- }
+
+  state = this.initGame();
 
   /*------ Helper Methods/App Logic------*/
+ initGame() {
+   return {
+  selColorIdx: 0,
+  guesses: [this.getNewGuess()],
+  code: this.genCode()
+ };
+}
+
   getNewGuess() {
     // return a guess object
     return {
