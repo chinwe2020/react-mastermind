@@ -53,6 +53,10 @@ handleColorSelection = (colorIdx) => {
   });
 };
 
+handleNewGame = () => {
+  this.setState(this.initGame());
+}
+
 /*-------Life Cycle Methods---------*/
   render() {
     let winTries = this.getWinTries();
@@ -71,7 +75,9 @@ handleColorSelection = (colorIdx) => {
                 handleColorSelection={this.handleColorSelection}
               />
               <GameTimer />
-              <NewGameButton />
+              <NewGameButton 
+                handleNewGame={this.handleNewGame}
+              />
             </div>
          </div>
         <footer className='App-footer'>{(winTries ? `You won in ${winTries} Guesses!` : `Good Luck!`)}</footer>
